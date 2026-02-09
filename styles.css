@@ -1,0 +1,235 @@
+
+:root {
+    --primary: #f97316;
+    --primary-dark: #ea580c;
+    --bg: #f3f4f6;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.top-bar {
+    background-color: #1f2937;
+    color: var(--white);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.search-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#searchInput {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    width: 220px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+#searchBtn {
+    padding: 8px 14px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#searchBtn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.filters {
+    background: var(--white);
+    padding: 14px 24px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.filters select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    min-width: 200px;
+}
+
+.filters select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+thead {
+    background-color: #f9fafb;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    font-size: 13px;
+    color: #374151;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background-color: #fff7ed;
+}
+
+td img {
+    width: 55px;
+    border-radius: 8px;
+}
+
+td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+td button:hover {
+    transform: scale(1.15);
+    color: var(--primary-dark);
+}
+
+.pagination {
+    background: var(--white);
+    padding: 14px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.pagination button {
+    padding: 6px 16px;
+    margin: 0 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.pagination button:hover {
+    background-color: var(--primary-dark);
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.form-container {
+    background: var(--white);
+    padding: 48px;
+    width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: var(--primary-dark);
+}
+
+.cancel-btn {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.cancel-btn:hover {
+    text-decoration: underline;
+}
