@@ -1,16 +1,13 @@
 const API_URL = "https://dummyjson.com/products";
 
-// PAGINACIÓN
 let skip = 0;
 const limit = 10;
 let currentPage = 1;
 let totalProducts = 0;
 
-// MODO ACTUAL
 let currentMode = "all";
 let currentValue = "";
 
-// DOM
 const tableBody = document.getElementById("productsTable");
 const pageInfo = document.getElementById("pageInfo");
 const searchInput = document.getElementById("searchInput");
@@ -20,7 +17,6 @@ const sortSelect = document.getElementById("sortSelect");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 
-// CARGAR PRODUCTOS
 const loadProducts = () => {
     let url = "";
 
@@ -51,7 +47,6 @@ const loadProducts = () => {
         .catch(err => console.error("Error al cargar productos", err));
 };
 
-// RENDER TABLA
 const renderTable = (products) => {
     tableBody.innerHTML = "";
 
@@ -76,7 +71,6 @@ const renderTable = (products) => {
     });
 };
 
-// PAGINACIÓN
 const updatePagination = () => {
     pageInfo.textContent = `Página ${currentPage}`;
     prevBtn.disabled = skip === 0;
@@ -97,7 +91,6 @@ nextBtn.onclick = () => {
     loadProducts();
 };
 
-// BUSCAR
 searchBtn.onclick = () => {
     const q = searchInput.value.trim();
     if (!q) return;
@@ -109,7 +102,6 @@ searchBtn.onclick = () => {
     loadProducts();
 };
 
-// FILTRO CATEGORÍA
 categorySelect.onchange = () => {
     if (!categorySelect.value) {
         currentMode = "all";
@@ -123,14 +115,12 @@ categorySelect.onchange = () => {
     loadProducts();
 };
 
-// ORDENAR
 sortSelect.onchange = () => {
     skip = 0;
     currentPage = 1;
     loadProducts();
 };
 
-// ELIMINAR
 window.deleteProduct = (id) => {
     const confirmDelete = confirm("¿Seguro que deseas eliminar este producto?");
     if (!confirmDelete) return;
@@ -144,7 +134,6 @@ window.deleteProduct = (id) => {
         .catch(err => console.error("Error al eliminar producto", err));
 };
 
-// CARGAR CATEGORÍAS
 const loadCategories = () => {
     fetch(`${API_URL}/category-list`)
         .then(res => res.json())
@@ -159,6 +148,6 @@ const loadCategories = () => {
         .catch(err => console.error("Error al cargar categorías", err));
 };
 
-// INIT
+
 loadCategories();
 loadProducts();
