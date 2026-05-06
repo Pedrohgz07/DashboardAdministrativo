@@ -148,6 +148,5 @@ const loadCategories = () => {
         .catch(err => console.error("Error al cargar categorías", err));
 };
 
-
 loadCategories();
 loadProducts();
